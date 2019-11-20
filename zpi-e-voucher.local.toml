@@ -1,0 +1,11 @@
+[voucher]
+grpc_port = 54111
+logs = "./data/logs/zpi-e-voucher"
+
+[admin]
+grpc_port = 54121
+logs = "./data/logs/zpi-e-voucher"
+
+[cashback]
+grpc_port = 54131
+logs = "./data/logs/zpi-e-voucher"

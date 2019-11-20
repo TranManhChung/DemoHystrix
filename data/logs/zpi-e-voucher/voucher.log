@@ -1,0 +1,36 @@
+{"level":"info","ts":"2019-11-20T15:14:19.274+0700","caller":"voucher/server.go:41","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:27:59.923+0700","caller":"voucher/server.go:41","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:29:13.522+0700","caller":"voucher/server.go:42","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:33:42.759+0700","caller":"voucher/server.go:43","msg":"Start listen","port":54111}
+{"level":"error","ts":"2019-11-20T15:34:28.759+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:56082->127.0.0.1:6831: write: connection refused"}
+{"level":"info","ts":"2019-11-20T15:44:21.211+0700","caller":"voucher/server.go:42","msg":"Start listen","port":54111}
+{"level":"error","ts":"2019-11-20T15:49:41.210+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:56000->127.0.0.1:6831: write: connection refused"}
+{"level":"info","ts":"2019-11-20T15:53:18.044+0700","caller":"voucher/server.go:43","msg":"Start listen","port":54111}
+{"level":"error","ts":"2019-11-20T15:54:30.043+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:52240->127.0.0.1:6831: write: connection refused"}
+{"level":"info","ts":"2019-11-20T15:55:12.091+0700","caller":"voucher/server.go:43","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:56:02.157+0700","caller":"voucher/server.go:42","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:56:36.214+0700","caller":"voucher/server.go:42","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:57:20.216+0700","caller":"voucher/server.go:42","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:58:28.465+0700","caller":"voucher/server.go:42","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:59:00.297+0700","caller":"voucher/server.go:43","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T15:59:58.757+0700","caller":"voucher/server.go:43","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:01:15.158+0700","caller":"voucher/server.go:44","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:04:28.141+0700","caller":"voucher/server.go:44","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:05:08.480+0700","caller":"voucher/server.go:44","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:05:18.289+0700","caller":"voucher/server.go:44","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:06:08.436+0700","caller":"voucher/server.go:43","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:08:42.251+0700","caller":"voucher/server.go:60","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:09:03.368+0700","caller":"voucher/server.go:60","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:22:29.857+0700","caller":"voucher/server.go:49","msg":"Start listen","port":54111}
+{"level":"info","ts":"2019-11-20T16:26:51.875+0700","caller":"voucher/server.go:49","msg":"Start listen","port":54111}
+{"level":"error","ts":"2019-11-20T16:40:11.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T16:43:31.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T16:43:57.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T16:44:45.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T16:51:43.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T16:52:12.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T16:52:36.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T16:52:42.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T16:53:25.523+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T17:07:12.511+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
+{"level":"error","ts":"2019-11-20T17:07:18.512+0700","caller":"tracing/init.go:82","msg":"error when flushing the buffer: write udp 127.0.0.1:37885->127.0.0.1:6831: write: connection refused"}
