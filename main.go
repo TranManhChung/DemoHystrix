@@ -1,9 +1,10 @@
 package main
 
-import "gitlab.360live.vn/zalopay/zpi-e-voucher/cmd"
+import "github.com/TranManhChung/DemoHystrix/cmd"
 
 var revision = ""
 
+// ./main admin --config=zpi-e-voucher.local.toml
 func main() {
 	cmd.SetRevision(revision)
 	cmd.Execute()

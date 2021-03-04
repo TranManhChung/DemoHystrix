@@ -1,11 +1,11 @@
 package cmd
 
 import (
+	"github.com/TranManhChung/DemoHystrix/services/admin"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"gitlab.360live.vn/zalopay/go-common/log"
 	"gitlab.360live.vn/zalopay/go-common/tracing"
-	"gitlab.360live.vn/zalopay/zpi-e-voucher/services/admin"
 )
 
 var adminCmd = &cobra.Command{

@@ -3,11 +3,11 @@ package admin
 import (
 	"context"
 
+	pb "github.com/TranManhChung/DemoHystrix/grpc-gen/admin"
 	opentracing "github.com/opentracing/opentracing-go"
 	"github.com/spf13/viper"
 	"gitlab.360live.vn/zalopay/go-common/common"
 	"gitlab.360live.vn/zalopay/go-common/log"
-	pb "gitlab.360live.vn/zalopay/zpi-e-voucher/grpc-gen/admin"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )

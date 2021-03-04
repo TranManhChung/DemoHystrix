@@ -5,19 +5,15 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/afex/hystrix-go/hystrix"
+	admin "github.com/TranManhChung/DemoHystrix/grpc-gen/admin"
+	pb "github.com/TranManhChung/DemoHystrix/grpc-gen/voucher"
+	"github.com/TranManhChung/DemoHystrix/util"
 	opentracing "github.com/opentracing/opentracing-go"
 	"github.com/spf13/viper"
 	"gitlab.360live.vn/zalopay/go-common/common"
 	"gitlab.360live.vn/zalopay/go-common/log"
-	admin "gitlab.360live.vn/zalopay/zpi-e-voucher/grpc-gen/admin"
-	pb "gitlab.360live.vn/zalopay/zpi-e-voucher/grpc-gen/voucher"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-
-	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
-	grpc_retry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 )
 
 // Server ...
@@ -30,7 +26,7 @@ type Server struct {
 // NewServer ...
 func NewServer(tracer opentracing.Tracer, logger log.Factory) *Server {
 
-	conn := NewConnection("localhost:54121", 3000, 3*time.Second)
+	conn := util.NewConnection("localhost:54121")
 	return &Server{
 		tracer:      tracer,
 		logger:      logger,
@@ -61,47 +57,4 @@ func (s *Server) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloR
 	_, e := s.adminClient.SayHello(ctx, &admin.HelloRequest{})
 	fmt.Println(e)
 	return &pb.HelloResponse{}, nil
-}
-
-// HystrixEnableFlag is a flag for enable/disable hystrix
-var HystrixEnableFlag = true
-
-// UnaryClientInterceptor ...
-func UnaryClientInterceptor(timout int) grpc.UnaryClientInterceptor {
-	return func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) error {
-		if HystrixEnableFlag {
-			hystrix.ConfigureCommand(method,
-				hystrix.CommandConfig{
-					Timeout:                timout,
-					MaxConcurrentRequests:  1000,
-					RequestVolumeThreshold: 100,
-					SleepWindow:            5000,
-					ErrorPercentThreshold:  80,
-				})
-
-			err := hystrix.Do(method, func() (err error) {
-				err = invoker(ctx, method, req, reply, cc, opts...)
-				return err
-			}, nil)
-
-			return err
-		}
-		return invoker(ctx, method, req, reply, cc, opts...)
-	}
-}
-
-// NewConnection ...
-func NewConnection(address string, timeout int, t time.Duration) *grpc.ClientConn {
-	var opts []grpc.DialOption
-	optsRetry := []grpc_retry.CallOption{
-		grpc_retry.WithBackoff(grpc_retry.BackoffExponential(50 * time.Millisecond)),
-		grpc_retry.WithCodes(codes.Unavailable),
-		grpc_retry.WithMax(3),
-		grpc_retry.WithPerRetryTimeout(t),
-	}
-	opts = append(opts, grpc.WithInsecure(), grpc.WithUnaryInterceptor(grpc_middleware.ChainUnaryClient(
-		UnaryClientInterceptor(timeout),
-		grpc_retry.UnaryClientInterceptor(optsRetry...))))
-	conn, _ := grpc.Dial(address, opts...)
-	return conn
 }
